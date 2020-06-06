@@ -1,26 +1,55 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+class App extends React.Component{
+  render(){
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <h1>What is My Ghanaian Name?</h1>
+        <div className="questionnaire">
+            <label htmlFor="Ethnic">What Ethnic Group would you want to named from?</label>
+                <select name="Ethnic Groupsrs">
+                    <option value="Ga">Ga</option>
+                    <option value="Twi">Twi</option>
+                    <option value="Ewe">Ewe</option>
+                    <option value="Any">Any</option>
+                </select>
+            <label>What gender name willl you prefer?</label>
+                <select name="Gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Either">Either</option>
+                    <option value="Other">Non-Gendered</option>
+                </select>
+            <label>What day of the week were you born?</label>
+                <select name="Day of the week">
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+                </select>
+            <label>If you do not know, please enter your date of birth</label>
+                <input type="date"/>
+            <label>Are you a twin?</label>
+            <select name="twin">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            <label>If so which are you?</label>
+            <label>Were you born after twins?</label>
+            <select name="twin">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            <label>I am the ___ child after twins</label>
+
+        </div>
     </div>
   );
+  }
 }
 
 export default App;
