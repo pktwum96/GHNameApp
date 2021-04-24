@@ -7,7 +7,7 @@ export const SocialsBar = () => {
         network: string;
         URL: string;
     }
-    const websiteURL = encodeURIComponent(window.location.toString());
+    const websiteURL = encodeURIComponent(window.location.origin);
     const URIMessage = encodeURIComponent(
         `Look at this cool website I found where you can find out your Ghanaian name. Lol `,
     );
