@@ -1,13 +1,17 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
-import SocialsBar from './socialbar';
+
+import { SocialsBar } from './socialbar';
 
 class Home extends React.Component {
     render() {
         return (
             <div>
-                <h1>Ghanaian Name Generator</h1>
-                <SocialsBar />
+                <div className="m-auto">
+                    <h1 className="text-center">
+                        Ghanaian Name Generator
+                    </h1>
+                    <SocialsBar />
+                </div>
                 <p>
                     Ghanaian names (or personal names in Ghana)
                     consist of several given names and surnames based
