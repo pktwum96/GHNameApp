@@ -1,12 +1,11 @@
 import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import { SocialsModal } from './SocialsModal';
+import { Link } from 'react-router-dom';
+interface NavigationBarProps {
+    handleShow: () => void;
+}
 
-export const NavigationBar = () => {
-    const [show, setShow] = React.useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+export const NavigationBar = (props: NavigationBarProps) => {
     return (
         <>
             <Navbar
@@ -16,30 +15,39 @@ export const NavigationBar = () => {
                 variant="dark"
             >
                 <Container>
-                    <Navbar.Brand href="#home">
+                    <Link className="navbar-brand" to="/">
                         Ghanaian Name Generator
-                    </Navbar.Brand>
+                    </Link>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#features">
+                            <Link
+                                className="nav-link"
+                                to="/resultName"
+                            >
                                 Find Name
-                            </Nav.Link>
-                            <Nav.Link href="#pricing">
+                            </Link>
+
+                            <Link className="nav-link" to="/learn">
                                 Learn More
-                            </Nav.Link>
+                            </Link>
                         </Nav>
-                        <Nav onClick={handleShow}>
-                            <Nav.Link>
+                        <Nav onClick={props.handleShow}>
+                            <Link
+                                className="nav-link"
+                                to={{
+                                    pathname: '/share',
+                                    state: {
+                                        showModal: true,
+                                    },
+                                }}
+                            >
                                 Share <i className="bi bi-share"></i>
-                            </Nav.Link>
+                            </Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            <SocialsModal show={show} handleClose={handleClose} />
         </>
     );
 };
-
-export default NavigationBar;

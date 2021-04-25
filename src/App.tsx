@@ -1,20 +1,12 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
-import { Home } from './components/Homepage';
-import NavigationBar from './components/Nav';
+import { AppRouter } from './components/router';
 
-class App extends React.Component {
-    render() {
-        return (
-            <div>
-                <NavigationBar />
-                <Container>
-                    <Home />
-                </Container>
-            </div>
-        );
-    }
-}
-
-export default App;
+export const App = () => {
+    return (
+        <BrowserRouter>
+            <AppRouter />
+        </BrowserRouter>
+    );
+};

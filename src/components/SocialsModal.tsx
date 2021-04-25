@@ -12,6 +12,7 @@ interface SocialsModalProps {
     show: boolean;
     handleClose: () => void;
 }
+
 export const SocialsModal = (props: SocialsModalProps) => {
     const { show, handleClose } = props;
     const copyToClipBoard = () => {
@@ -33,7 +34,7 @@ export const SocialsModal = (props: SocialsModalProps) => {
     };
     return (
         <>
-            <Modal show={show} onHide={handleClose}>
+            <Modal show={show} onHide={handleClose} centered>
                 <Modal.Header>
                     <Modal.Title className="m-auto">
                         <h3>Share</h3>

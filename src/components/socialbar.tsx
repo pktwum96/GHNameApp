@@ -52,7 +52,7 @@ export const SocialsBar = () => {
         },
     ];
     return (
-        <div className="text-center">
+        <div className="text-center my-4">
             {socialMediaLinks.map((link, index) => {
                 return (
                     <SocialIcon
