@@ -10,8 +10,8 @@ export const Home = (props: HomeProps) => {
             <div>
                 <div className="my-4 text-center">
                     <h1>Ghanaian Name Generator</h1>
-                    <p>Let's name you!</p>
-                    <SocialsBar />
+
+                    <SocialsBar displayText={`Let's name you!`} />
                 </div>
                 <p>
                     Ghanaian names (or personal names in Ghana)
