@@ -1,5 +1,5 @@
 import React from 'react';
-import { SocialsBar } from './SoocialAppsBar';
+import { SocialsBar } from './SocialAppsBar';
 
 interface RandomNameProps {}
 export const RandomName = (props: RandomNameProps) => {
@@ -7,7 +7,12 @@ export const RandomName = (props: RandomNameProps) => {
         <div>
             <div className="my-4 text-center">
                 <h1>Random Name</h1>
-                <SocialsBar />
+
+                <SocialsBar
+                    displayText={
+                        'Share your Ghanaian name with your friends!'
+                    }
+                />
             </div>
         </div>
     );

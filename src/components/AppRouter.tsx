@@ -6,15 +6,16 @@ import { Route, Switch, useLocation } from 'react-router-dom';
 import { Questions } from './Questions';
 import { LearnMore } from './LearningPage';
 import { RandomName } from './randomName';
+import { SocialsModal } from './SocialsModal';
 
 export const AppRouter = () => {
     interface stateType {
         showModal: boolean;
     }
 
-    const { state, pathname } = useLocation<stateType>();
+    const { pathname } = useLocation<stateType>();
     const [show, setShow] = React.useState(
-        state?.showModal || pathname.includes('share'),
+        pathname.includes('share'),
     );
 
     const handleClose = () => setShow(false);
@@ -25,40 +26,22 @@ export const AppRouter = () => {
     return (
         <div>
             <NavigationBar handleShow={handleShow} />
-            <Container>
+            <Container className="col-lg-9">
                 <Switch>
                     <Route
                         exact
-                        path={['/', '/home', '/share', '/homepage']}
-                        render={() => {
-                            return (
-                                <Home
-                                    show={show}
-                                    handleClose={handleClose}
-                                />
-                            );
-                        }}
+                        path={['/', '/home', '/homepage', '/share']}
+                        component={Home}
                     />
-                    <Route
-                        exact
-                        path="/resultName"
-                        component={Questions}
-                    />
-                    <Route
-                        exact
-                        path="/learn"
-                        component={LearnMore}
-                    />
+                    <Route path="/resultName" component={Questions} />
+                    <Route path="/learn" component={LearnMore} />
 
-                    <Route
-                        exact
-                        path="/random"
-                        component={RandomName}
-                    />
+                    <Route path="/random" component={RandomName} />
 
                     {/*TODO: Create 404 page*/}
                     <Route>{'404 Page Not Found'}</Route>
                 </Switch>
+                <SocialsModal show={show} handleClose={handleClose} />
             </Container>
         </div>
     );

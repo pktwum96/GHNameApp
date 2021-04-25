@@ -1,13 +1,9 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { SocialsBar } from './SoocialAppsBar';
-import { SocialsModal } from './SocialsModal';
+import { SocialsBar } from './SocialAppsBar';
 
-interface HomeProps {
-    show: boolean;
-    handleClose: () => void;
-}
+interface HomeProps {}
 export const Home = (props: HomeProps) => {
     return (
         <>
@@ -46,37 +42,31 @@ export const Home = (props: HomeProps) => {
                     former United Nations Secretary General Kofi
                     Annan.
                 </p>
-                <div
-                    className="text-center"
-                    style={{
-                        display: 'flex',
-                        justifyContent: 'space-around',
-                    }}
-                >
-                    <Button>
-                        <Link
-                            className="nav-link"
-                            style={{ color: 'inherit' }}
-                            to="/random"
-                        >
-                            Generate Random Name
-                        </Link>
-                    </Button>
-                    <Button className="btn btn-primary">
-                        <Link
-                            className="nav-link"
-                            style={{ color: 'inherit' }}
-                            to="/quiz"
-                        >
-                            Quiz to figure out Name
-                        </Link>
-                    </Button>
+                <div className="row text-center">
+                    <div className="col-lg-6 my-2">
+                        <Button>
+                            <Link
+                                className="nav-link"
+                                style={{ color: 'inherit' }}
+                                to="/random"
+                            >
+                                Generate Random Name
+                            </Link>
+                        </Button>
+                    </div>
+                    <div className="col-lg-6 my-2">
+                        <Button className="btn btn-primary">
+                            <Link
+                                className="nav-link"
+                                style={{ color: 'inherit' }}
+                                to="/quiz"
+                            >
+                                Quiz to figure out Name
+                            </Link>
+                        </Button>
+                    </div>
                 </div>
             </div>
-            <SocialsModal
-                show={props.show}
-                handleClose={props.handleClose}
-            />
         </>
     );
 };

@@ -2,14 +2,20 @@ import React from 'react';
 
 import { SocialIcon } from 'react-social-icons';
 
-export const SocialsBar = () => {
+interface SocialsBarProps {
+    displayText?: string;
+    additionalShareText?: string;
+}
+export const SocialsBar = (props: SocialsBarProps) => {
     interface SocialMediaInterface {
         network: string;
         URL: string;
     }
     const websiteURL = encodeURIComponent(window.location.origin);
     const URIMessage = encodeURIComponent(
-        `Look at this cool website I found where you can find out your Ghanaian name. Lol `,
+        props.additionalShareText
+            ? props.additionalShareText
+            : `Look at this cool website I found where you can find out your Ghanaian name. Lol `,
     );
 
     const socialMediaLinks: SocialMediaInterface[] = [
@@ -52,18 +58,25 @@ export const SocialsBar = () => {
         },
     ];
     return (
-        <div className="text-center my-4">
-            {socialMediaLinks.map((link, index) => {
-                return (
-                    <SocialIcon
-                        url={link.URL}
-                        network={link.network}
-                        key={index}
-                        target={'_blank'}
-                        style={{ height: 30, width: 30, margin: 5 }}
-                    />
-                );
-            })}
-        </div>
+        <>
+            <p>{props.displayText}</p>
+            <div className="text-center my-4">
+                {socialMediaLinks.map((link, index) => {
+                    return (
+                        <SocialIcon
+                            url={link.URL}
+                            network={link.network}
+                            key={index}
+                            target={'_blank'}
+                            style={{
+                                height: 30,
+                                width: 30,
+                                margin: 5,
+                            }}
+                        />
+                    );
+                })}
+            </div>
+        </>
     );
 };
