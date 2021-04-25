@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { SocialsBar } from './socialbar';
+import { Link } from 'react-router-dom';
+import { SocialsBar } from './SoocialAppsBar';
 import { SocialsModal } from './SocialsModal';
 
 interface HomeProps {
@@ -52,8 +53,24 @@ export const Home = (props: HomeProps) => {
                         justifyContent: 'space-around',
                     }}
                 >
-                    <Button>Generate Random Name</Button>
-                    <Button>Quiz to figure out Name</Button>
+                    <Button>
+                        <Link
+                            className="nav-link"
+                            style={{ color: 'inherit' }}
+                            to="/random"
+                        >
+                            Generate Random Name
+                        </Link>
+                    </Button>
+                    <Button className="btn btn-primary">
+                        <Link
+                            className="nav-link"
+                            style={{ color: 'inherit' }}
+                            to="/quiz"
+                        >
+                            Quiz to figure out Name
+                        </Link>
+                    </Button>
                 </div>
             </div>
             <SocialsModal

@@ -29,7 +29,7 @@ export const AppRouter = () => {
                 <Switch>
                     <Route
                         exact
-                        path={['/', '/home', '/share']}
+                        path={['/', '/home', '/share', '/homepage']}
                         render={() => {
                             return (
                                 <Home

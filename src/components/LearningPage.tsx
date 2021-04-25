@@ -1,5 +1,5 @@
 import React from 'react';
-import { SocialsBar } from './socialbar';
+import { SocialsBar } from './SoocialAppsBar';
 
 interface LearnMoreProps {}
 export const LearnMore = (props: LearnMoreProps) => {

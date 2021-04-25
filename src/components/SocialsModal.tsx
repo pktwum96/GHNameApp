@@ -6,7 +6,7 @@ import {
     InputGroup,
     Modal,
 } from 'react-bootstrap';
-import { SocialsBar } from './socialbar';
+import { SocialsBar } from './SoocialAppsBar';
 
 interface SocialsModalProps {
     show: boolean;

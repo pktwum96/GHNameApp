@@ -1,5 +1,5 @@
 import React from 'react';
-import { SocialsBar } from './socialbar';
+import { SocialsBar } from './SoocialAppsBar';
 
 interface RandomNameProps {}
 export const RandomName = (props: RandomNameProps) => {
